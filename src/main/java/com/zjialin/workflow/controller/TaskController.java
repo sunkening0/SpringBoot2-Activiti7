@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.impl.util.CollectionUtil;
 import org.activiti.engine.task.Task;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +30,7 @@ import java.util.Map;
 @Api(tags = "任务相关接口")
 @Slf4j
 public class TaskController extends BaseController {
+    private static final Logger log = LogManager.getLogger(TaskController.class);
 
     @PostMapping(path = "findTaskByAssignee")
     @ApiOperation(value = "根据流程assignee查询当前人的个人任务", notes = "根据流程assignee查询当前人的个人任务")

@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.impl.util.CollectionUtil;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.runtime.ProcessInstanceQuery;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +31,7 @@ import java.util.Map;
 @Api(tags = "启动流程实例")
 @Slf4j
 public class StartController extends BaseController {
-
+    private static final Logger log = LogManager.getLogger(StartController.class);
 
     @PostMapping(path = "start")
     @ApiOperation(value = "根据流程key启动流程", notes = "每一个流程有对应的一个key这个是某一个流程内固定的写在bpmn内的")

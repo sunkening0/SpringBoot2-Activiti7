@@ -31,9 +31,9 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Activiti7-工作流API")
-                .description("xugj | 高效码农")
+                .description("sss | 工作流model")
                 // 作者信息
-                .contact(new Contact("zjialin", "https://github.com/zjialin/SpringBoot2-Activiti7", "zjialin@outlook.com"))
+                .contact(new Contact("skn", "https://github.com/zjialin/SpringBoot2-Activiti7", "812610493@qq.com"))
                 .version("1.0.0")
                 .build();
     }

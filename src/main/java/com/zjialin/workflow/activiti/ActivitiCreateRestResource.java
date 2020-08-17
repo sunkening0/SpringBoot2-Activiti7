@@ -8,6 +8,8 @@ import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngines;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.repository.Model;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/activiti")
 @Slf4j
 public class ActivitiCreateRestResource {
+    private static final Logger log = LogManager.getLogger(ActivitiCreateRestResource.class);
+
     /**
      * 创建模型
      */

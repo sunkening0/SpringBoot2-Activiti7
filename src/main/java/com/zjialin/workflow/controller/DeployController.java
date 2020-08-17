@@ -12,6 +12,8 @@ import org.activiti.bpmn.model.BpmnModel;
 import org.activiti.editor.language.json.converter.BpmnJsonConverter;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.DeploymentBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +32,7 @@ import java.util.Map;
 @Api(tags = "部署流程、删除流程")
 @Slf4j
 public class DeployController extends BaseController {
+    private static final Logger log = LogManager.getLogger(DeployController.class);
 
 
     @PostMapping(path = "deploy")
@@ -37,7 +40,6 @@ public class DeployController extends BaseController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "modelId", value = "设计的流程图模型ID", dataType = "String", paramType = "query"),
             @ApiImplicitParam(name = "processName", value = "设计的流程图名称", dataType = "String", paramType = "query")
-
     })
     public RestMessage deploy(@RequestParam("modelId") String modelId, @RequestParam("processName") String processName) {
         RestMessage restMessage = new RestMessage();
